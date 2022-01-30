@@ -1,9 +1,25 @@
 import React from "react";
 import CollapseWrapper from "../common/collapse";
+import SimpleComponent from "./simpleCom/simpleCom";
+import CardWrapper from "../common/Card";
+import withAuth from "./simpleCom/withAuth";
+import loginLogOut from "./simpleCom/loginLogOut";
 
 const HocExercise = () => {
+    const ComponentWithAuth = withAuth(SimpleComponent);
+    const ComponentLoginLogOut = loginLogOut(SimpleComponent);
+
     return (
         <CollapseWrapper title="Упражнение">
+            <CardWrapper>
+                <SimpleComponent/>
+            </CardWrapper>
+            <CardWrapper>
+                <ComponentWithAuth/>
+            </CardWrapper>
+            <CardWrapper>
+                <ComponentLoginLogOut/>
+            </CardWrapper>
             <p className="mt-3">
                 Вам необходимо реализовать компонент{" "}
                 <code>SimpleComponent</code>, который:
