@@ -5,15 +5,14 @@ const UseRefExercise = () => {
     const divRef = useRef();
 
     const handleClick = () => {
-        console.log("style2", divRef);
-
         divRef.current.style.width = "80px";
         divRef.current.style.height = "150px";
+        divRef.current.textContent = "text";
     };
     return (
 
         <CollapseWrapper title="Упражнение">
-            <div ref={divRef}>
+            <div className="text-test" ref={divRef} >
             <p className="mt-3">
                 У вас есть блок, у которого заданы ширина и высота. Добавьте
                 кнопку, при нажатии которой изменятся следующие свойства:
